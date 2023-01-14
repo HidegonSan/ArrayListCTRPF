@@ -31,7 +31,7 @@ namespace CTRPluginFramework {
         int item_count = ArrayList::Items.size();
         bool ret = false;
 
-        for (int i=0; i<item_count; i++) {
+        for (int i=0; i<item_count + 1; i++) {
             std::string item = ArrayList::Items[i];
             if (item == text) {
                 ArrayList::Items.erase(ArrayList::Items.begin() + i);
