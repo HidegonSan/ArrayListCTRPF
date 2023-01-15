@@ -41,7 +41,7 @@ namespace CTRPluginFramework {
         for (int i=0; i<step; i++) {
             float p = i / static_cast<float>(step); // Current progress (0 ~ 1)
             int sub = ArrayList::_EaseOutSine(p)*width; // amount to sub
-            scr.Draw(text, 400 - sub, y);
+            scr.Draw(text, 400 - sub, y, ArrayList::ForegroundColor, ArrayList::BackgroundColor);
             if (i != step - 1) { // Not needed for normal drawing
                 Sleep(Milliseconds((1000*((float)1 / (float)3)) / step)); // Do not think
             }
@@ -59,7 +59,7 @@ namespace CTRPluginFramework {
         for (int i=0; i<step; i++) {
             float p = i / static_cast<float>(step); // Current progress (0 ~ 1)
             int add = ArrayList::_EaseInSine(p)*width; // amount to add
-            scr.Draw(text, x + add, y);
+            scr.Draw(text, x + add, y, ArrayList::ForegroundColor, ArrayList::BackgroundColor);
             if (i != step - 1) { // Not needed for normal drawing
                 Sleep(Milliseconds((1000*((float)1 / (float)3)) / step)); // Do not think
             }
