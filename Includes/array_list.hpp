@@ -8,12 +8,22 @@
 namespace CTRPluginFramework {
 
     class ArrayList {
-        public:
 
-            static std::vector<std::string> Items;
+        private:
+            static void _Wait();
+            static void _EaseOut(const std::string &text, int index);
+            static void _EaseIn(const std::string &text, int index);
+            static float _EaseOutSine(float x);
+            static float _EaseInSine(float x);
+
+        public:
             static Color BackgroundColor;
             static Color ForegroundColor;
             static Color BorderColor;
+
+            static std::vector<std::string> Items;
+            static int AnimatingIndex;
+
 
             /**
              * @brief         Add item to Arraylist item list
@@ -43,7 +53,7 @@ namespace CTRPluginFramework {
 
 
             /**
-             * @brief         Draw Arraylist (pass to Callback of PluginMenu)
+             * @brief         Draw Arraylist (Pass to Callback of PluginMenu)
              *
              */
             static void Draw(void);
