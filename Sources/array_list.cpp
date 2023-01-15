@@ -15,9 +15,9 @@ namespace CTRPluginFramework {
         bool ret = 24 < item_count ? false : true; // 24 = 240(Top window height) / 10(Item height)
 
         if (item_count == 0) ArrayList::Items.push_back(text);
-        for (int i=0; i<item_count + 1; i++) {
+        for (int i=0; i<item_count; i++) {
             std::string item = ArrayList::Items[i];
-            if (item.length() <= text.length()) {
+            if (item.length() <= text.length() || (i == item_count - 1)) {
                 ArrayList::Items.insert(ArrayList::Items.begin() + i, text);
                 break;
             }
@@ -31,7 +31,7 @@ namespace CTRPluginFramework {
         int item_count = ArrayList::Items.size();
         bool ret = false;
 
-        for (int i=0; i<item_count + 1; i++) {
+        for (int i=0; i<item_count; i++) {
             std::string item = ArrayList::Items[i];
             if (item == text) {
                 ArrayList::Items.erase(ArrayList::Items.begin() + i);
