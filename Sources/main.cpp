@@ -85,6 +85,16 @@ exit:
         });*/
     }
 
+    // Useful function to display cheat status in ArrayList
+    void ToggleArrayList(MenuEntry *entry) {
+        if (entry->WasJustActivated()) {
+            ArrayList::Add(entry->Name());
+        }
+        else if (!entry->IsActivated()) {
+            ArrayList::Remove(entry->Name());
+        }
+    }
+
     int     main(void)
     {
         PluginMenu *menu = new PluginMenu("Array List CTRPF", 0, 7, 4, "https://github.com/HidegonSan/ArrayListCTRPF/");
