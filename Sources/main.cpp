@@ -87,15 +87,7 @@ exit:
 
     int     main(void)
     {
-        PluginMenu *menu = new PluginMenu("Action Replay", 0, 7, 4,
-                                            "A blank template plugin.\nGives you access to the ActionReplay and others tools.");
-
-        // ArrayList Example
-        ArrayList::Add("Fly Hack");
-        ArrayList::Add("Inf HP");
-        ArrayList::Add("Coordination Modifier");
-        ArrayList::Add("Coordination Modifier");
-        ArrayList::Add("Moon Jump");
+        PluginMenu *menu = new PluginMenu("Array List CTRPF", 0, 7, 4, "https://github.com/HidegonSan/ArrayListCTRPF/");
 
         // Synnchronize the menu with frame event
         menu->SynchronizeWithFrame(true);
@@ -104,7 +96,7 @@ exit:
         InitMenu(*menu);
 
         // Launch menu and mainloop
-        menu->Callback(ArrayList::Draw);
+        menu->Callback(ArrayList::Draw); // Callback for ArrayList
         menu->Run();
 
         delete menu;
