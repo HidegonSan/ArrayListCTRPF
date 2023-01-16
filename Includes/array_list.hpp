@@ -10,9 +10,8 @@ namespace CTRPluginFramework {
     class ArrayList {
 
         private:
-            static void _Wait();
-            static void _EaseOut(const std::string &text, int index);
-            static void _EaseIn(const std::string &text, int index);
+            static void _SlideIn(const std::string &text, int index);
+            static void _SlideOut(const std::string &text, int index);
             static float _EaseOutSine(float x);
             static float _EaseInSine(float x);
 
@@ -26,7 +25,7 @@ namespace CTRPluginFramework {
 
 
             /**
-             * @brief         Add item to Arraylist item list
+             * @brief         Add item to ArrayList item list
              *
              * @param text    Text to add
              * @return true   If the number of items is 24 or less (maximum display)
@@ -36,7 +35,7 @@ namespace CTRPluginFramework {
 
 
             /**
-             * @brief         Delete item from Arraylist item list
+             * @brief         Delete item from ArrayList item list
              *
              * @param text    Text of item to delete
              * @return true   If the delete was successful
@@ -46,14 +45,14 @@ namespace CTRPluginFramework {
 
 
             /**
-             * @brief         Clear the Arraylist item list
+             * @brief         Clear the ArrayList item list
              *
              */
             static void Clear(void);
 
 
             /**
-             * @brief         Draw Arraylist (Pass to Callback of PluginMenu)
+             * @brief         Draw ArrayList (Pass to Callback of PluginMenu)
              *
              */
             static void Draw(void);
